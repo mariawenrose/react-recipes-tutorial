@@ -35,7 +35,7 @@ const App = () => {
   }
 
   return (
-    <div>
+    <div className = 'App'>
       <form
       onSubmit={getSearch}
         className='search-form'>
@@ -47,17 +47,23 @@ const App = () => {
         <button
           className='search-button' type='submit'> Search</button>
       </form>
+      <div className = 'recipes'>
       {recipes.map(recipe => (
         <Recipe
           key={recipe.recipe.label}
           label={recipe.recipe.label}
-          calories={recipe.recipe.calories}
+          calories = {recipe.recipe.calories}
           image={recipe.recipe.image}
           ingredients={recipe.recipe.ingredients}
         />
       ))}
+      </div>
     </div>
   )
+
+//   function Round() {
+//     {calories}math.floor()
+//   }
 }
 
 export default App;
